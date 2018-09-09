@@ -16,4 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('users', ['uses'=>'UserController@index']);
-Route::post('/register', ['uses'=>'UserController@login']);
+Route::post('/register', ['uses'=>'UserController@register',
+'as'=> 'signup'
+]);
+Route::get('login', function () {
+    return view('login');
+});

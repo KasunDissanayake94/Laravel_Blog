@@ -77,13 +77,6 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
    <h2>Register Form</h2>
    <p>Please enter your valis details</p>
    </div>
-   @if(count($errors)>0)
-    @foreach ($errors->all() as $error)
-      <li>
-        {{ $error }}
-      </li>
-    @endforeach
-   @endif
     <form action=" {{ route('signup') }}" method="post" id="Login">
     {{ csrf_field() }}
 

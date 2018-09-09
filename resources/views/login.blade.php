@@ -70,26 +70,15 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
   </head>
 <body id="LoginForm">
 <div class="container">
-<h1 class="form-heading">Register Form</h1>
+<h1 class="form-heading">Login Form</h1>
 <div class="login-form">
 <div class="main-div">
     <div class="panel">
-   <h2>Register Form</h2>
-   <p>Please enter your valis details</p>
+   <h2>Login Form</h2>
+   <p>Please enter your email and password</p>
    </div>
-   @if(count($errors)>0)
-    @foreach ($errors->all() as $error)
-      <li>
-        {{ $error }}
-      </li>
-    @endforeach
-   @endif
-    <form action=" {{ route('signup') }}" method="post" id="Login">
+    <form action="/loginsuccees" method="post" id="Login">
     {{ csrf_field() }}
-
-    <div class="form-group">
-                        <input type="name" name="name" class="form-control" id="name" placeholder="User Name">
-                    </div>
 
         <div class="form-group">
             <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email Address">
@@ -104,10 +93,8 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
         <a href="reset.html">Forgot password?</a>
         </div>
 
-        <button type="submit" class="btn btn-primary">Register</button>
-        <div class="forgot">
-        <a href="reset.html">Login Form</a>
-        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+
 
     </form>
     </div>

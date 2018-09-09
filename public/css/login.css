@@ -1,0 +1,41 @@
+@font-face{
+    font-family: myfont;
+    src: url('../fonts/Prototype.ttf');
+}
+
+@font-face{
+    font-family: myfont2;
+    src: url('../fonts/Traffolight.otf');
+}
+
+
+html, body{
+    height: 100%;
+    font-family:myfont,verdana,arial,sans-serif;
+    color:#555555;
+}
+
+h1,h2,h3,h4{
+    font-family:myfont,sans-serif;
+}
+
+.btn-azure, .btn-azure:focus {
+    background-color: #ba68c8 !important;
+    border-color: #9c27b0;
+    color: #fff;
+}
+
+.btn-azure:hover,
+.open .btn-azure.dropdown-toggle {
+    background-color: #e1bee7 !important;
+    border-color: #ba68c8;
+    color: #fff
+}
+
+a>small{
+    color:#9c27b0 ;
+}
+
+#login_logo{
+    font-size: 50px;
+}
