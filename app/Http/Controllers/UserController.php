@@ -26,7 +26,7 @@ class UserController extends Controller
       $table->password = $request->input('password');
 
       $table->save();
-      return redirect('login');
+      return redirect('login')->with('msg','Registered Successfully!');
 
     }
     public function login(Request $request){

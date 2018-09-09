@@ -75,7 +75,8 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
 <div class="main-div">
     <div class="panel">
    <h2>Register Form</h2>
-   <p>Please enter your valis details</p>
+   <p>Please enter your email and password here</p>
+  
    </div>
     <form action=" {{ route('signup') }}" method="post" id="Login">
     {{ csrf_field() }}

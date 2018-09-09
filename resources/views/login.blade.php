@@ -76,6 +76,18 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
     <div class="panel">
    <h2>Login Form</h2>
    <p>Please enter your email and password</p>
+   @if(session()->has('msg'))
+   <div class="alert alert-success">
+     {{ session()->get('msg') }}
+   </div>
+   @endif
+   @if(count($errors)>0)
+    @foreach ($errors->all() as $error)
+      <li>
+        {{ $error }}
+      </li>
+    @endforeach
+   @endif
    </div>
     <form action="/loginsuccees" method="post" id="Login">
     {{ csrf_field() }}

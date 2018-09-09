@@ -79,9 +79,9 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
    </div>
    @if(count($errors)>0)
     @foreach ($errors->all() as $error)
-      <li>
-        {{ $error }}
-      </li>
+        <div class="alert alert-danger">
+        {{ $error }}<br>
+      </div>
     @endforeach
    @endif
     <form action=" {{ route('signup') }}" method="post" id="Login">
