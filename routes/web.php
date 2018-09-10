@@ -14,11 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('loginform', function () {
+    return view('login');
+});
 Route::get('users', ['uses'=>'UserController@index']);
+Route::get('home', ['uses'=>'UserController@home',
+'as'=> 'home'
+]);
+
+
 Route::post('/register', ['uses'=>'UserController@register',
 'as'=> 'signup'
 ]);
-Route::get('login', function () {
-    return view('login');
-});
+
+Route::post('/login', ['uses'=>'UserController@login',
+'as'=> 'signin'
+]);

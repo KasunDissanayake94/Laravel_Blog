@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -26,10 +27,20 @@ class UserController extends Controller
       $table->password = $request->input('password');
 
       $table->save();
-      return redirect('login')->with('msg','Registered Successfully!');
+      return redirect('loginform')->with('msg','Registered Successfully!');
 
     }
     public function login(Request $request){
-        return $request->all();
+      $credentials = $request->only('email', 'password');
+
+      if (Auth::attempt($credentials)) {
+        return redirect()->route('home');
+      }else{
+        return redirect()->back()->with('msg','Login Failed!');
+      }
+
+    }
+    public function home(){
+      return view('home');
     }
 }
